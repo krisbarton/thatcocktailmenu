@@ -1,6 +1,8 @@
-import { createStore } from 'redux';
-import rootReducer from './rootReducer';
+import { configureStore } from '@reduxjs/toolkit';
+import menuReducer from './menuSlice';
 
-const store = createStore(rootReducer);
-
-export default store;
+export default configureStore({
+    reducer: {
+        menu: menuReducer
+    }
+})

@@ -1,11 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { saveItem, removeItem } from '../../redux/menuSlice';
 
-import {
-    saveMenu
-} from '../menu/menu.actions';
+import CocktailDisplay from '../cocktails/display'
 
 const Results = ({ data }) => {
+
+    const menu = useSelector((state) => state.menu.cocktail);
+    const dispatch = useDispatch();
 
     return (
         <div className="search__results">
@@ -13,12 +15,15 @@ const Results = ({ data }) => {
             {Object.keys(data).map((key, index) => {
                 if (data[key].title !== undefined) {
                     const { title, ingredients, recipe } = data[key];
-                    return <div className="search__results__recipe" key={key}>
-                        <h3>{title}</h3>
-                        <div dangerouslySetInnerHTML={{ __html: ingredients }}></div>
-                        <div dangerouslySetInnerHTML={{ __html: recipe }}></div>
-                        <button>Save Recipe</button>
-                    </div>
+                    return (
+                        <>
+                            <CocktailDisplay name={title} ingredients={ingredients} recipe={recipe} id={key} />
+                            {!menu.includes(data[key]) ?
+                                <button aria-label="Save Cocktail to your menu!" onClick={() => dispatch(saveItem(data[key]))}>Save Recipe</button>
+                                : <button aria-label="Remove Cocktail from your menu!" onClick={() => dispatch(removeItem(title))}>Remove Recipe</button>
+                            }
+                        </>
+                    )
                 }
             })}
         </div>
@@ -26,10 +31,4 @@ const Results = ({ data }) => {
 
 }
 
-const mapStateToProps = state => {
-    return {
-        menu: state.menu
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Results);
+export default Results;
