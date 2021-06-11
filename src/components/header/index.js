@@ -9,11 +9,11 @@ const Header = () => {
 
     return (
         <>
-            <Navigation />
             <header>
                 <Link to="/">
                     <img className="logo" src={Logo} alt="ThatCocktail - Quicl & Easy Cocktails you can make at home" />
                 </Link>
+                <Navigation />
             </header>
         </>
     )

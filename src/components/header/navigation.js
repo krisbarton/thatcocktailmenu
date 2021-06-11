@@ -9,8 +9,7 @@ const Navigation = () => {
 
     return (
         <nav>
-            <Link to="/">Home</Link>
-            <Link to="/menu">Menu ({Object.keys(menu).length})</Link>
+            <Link to="/menu">Your Menu ({Object.keys(menu).length})</Link>
         </nav>
     )
 

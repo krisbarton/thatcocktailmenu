@@ -1,0 +1,30 @@
+.search__results {
+
+    h1 {
+        margin-bottom: 0;
+        span {
+            color: $primaryColor;
+        }
+    }
+
+    h2 {
+        margin-top: .3rem;
+
+        span{
+            color: $secondaryColor;
+        }
+    }
+
+    &__details{
+        &--hide {
+            display: none;
+        }
+    }
+
+    &__list {
+        border-top: 1px solid #2b2b2b;
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+
+}

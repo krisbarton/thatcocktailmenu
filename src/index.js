@@ -15,6 +15,9 @@ Further features:
     - View Menu: DONE!
     - Remove items from menu, in menu view: DONE!
     - Menu link item count (i.e. how many cocktails do I have in my menu?): DONE!
+    - Add Redux slice for serach history and results
+    - Move search results to new view.
+    - Continue to build 
     - Do styles for app.
     - Do animations.
 

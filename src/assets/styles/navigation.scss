@@ -1,0 +1,32 @@
+nav {
+    display: flex;
+    flex-basis: auto;
+    font-size: .9rem;
+    justify-content: flex-end;
+    padding: $standardPadding 0;
+    text-transform: uppercase;
+
+    a {
+        background-color: $tertiaryColor;
+        border-radius: .5rem;
+        color: $foregroundColor;
+        margin: 0 .3rem;
+        padding: $standardPadding / 1.5;
+        text-decoration: none;
+    }
+}
+
+
+@media only screen 
+  and (min-device-width: 1180px) {
+
+    nav {
+        flex-basis: auto;
+        max-width: $maxWidth;
+
+        a:hover {
+            background-color: darken($tertiaryColor, 5%);
+        }
+    }
+
+  }

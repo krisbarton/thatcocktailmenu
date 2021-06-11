@@ -1,0 +1,114 @@
+.cocktail__search {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    input {
+        background-color: $backgroundColor;
+        border: 1px solid $foregroundColor;
+        border-radius: .3rem;
+        color: $foregroundColor;
+        flex-basis: 100%;
+        font-family: $standardFont;
+        font-size: 1rem;
+        margin-bottom: .5rem;
+        padding: $standardPadding;
+    }
+
+    button {
+        background-color: $primaryColor;
+        border: 1px solid $primaryColor;
+        border-radius: .3rem;
+        color: $foregroundColor;
+        cursor: pointer;
+        flex-basis: 100%;
+        font-family: $standardFont;
+        font-size: 1rem;
+        padding: $standardPadding;
+    }
+
+    &__loading {
+        background-color: $backgroundColor;
+        display: flex;
+        flex-wrap: wrap;
+        height: calc(100vh - #{$headerHeight});
+        justify-content: center;
+        position: fixed;
+        top: $headerHeight;
+        left: 0;
+        width: 100vw;
+        z-index: 2;
+
+       .loading {
+           align-items: center;
+           align-content: center;
+           display: flex;
+           flex-wrap: wrap;
+           padding-bottom: 15%;
+           text-align: center;
+
+           p {
+               flex-basis: 100%;
+           }
+
+           &__text {
+               font-family: $headingFont;
+               font-size: 3rem;
+               margin-top: -3rem;
+               &:after {
+                    overflow: hidden;
+                    display: inline-block;
+                    vertical-align: bottom;
+                    -webkit-animation: ellipsis steps(4,end) 900ms infinite;      
+                    animation: ellipsis steps(4,end) 900ms infinite;
+                    content: "\2026"; /* ascii code for the ellipsis character */
+                    width: 0px;
+               }
+           }
+       }
+    }
+
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@keyframes ellipsis {
+    to {
+      width: 60px;    
+    }
+  }
+  
+  @-webkit-keyframes ellipsis {
+    to {
+      width: 60px;    
+    }
+  }
+
+@media only screen 
+  and (min-device-width: 768px) {
+
+    .cocktail__search {
+        flex-wrap: nowrap;
+
+        input {
+            margin: 0 .5rem 0 0;
+        }
+
+        button {
+            max-width: 200px;
+            &:hover {
+                background-color: darken($primaryColor, 5%);
+            }
+        }
+
+        &__loading {
+            .loading {
+                padding-bottom: 15%;
+            }
+        }
+    
+    }
+
+  }

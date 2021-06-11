@@ -9,6 +9,7 @@ import Header from './components/header';
 import Welcome from './components/welcome';
 import Search from './components/search';
 import MenuPage from './pages/menu';
+import SearchPage from './pages/search';
 
 const App = () => {
 
@@ -23,6 +24,9 @@ const App = () => {
                     </Route>
                     <Route path="/menu">
                         <MenuPage />
+                    </Route>
+                    <Route path="/search">
+                        <SearchPage />
                     </Route>
                 </Switch>
             </Router>

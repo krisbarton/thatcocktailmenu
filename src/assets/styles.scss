@@ -1,16 +1,47 @@
+@import './styles//config.scss';
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color: #000;
-    color: #FFF;
+    background-color: $backgroundColor;
+    color: $foregroundColor;
+    font-family: $standardFont;
+    font-size: 1rem;
 }
 
 header {
+    align-items: flex-start;
     display: flex;
-    justify-content: center;
-    padding: 1rem 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    height: $headerHeight;
+    max-width: $maxWidth;
 }
 
+h1, h2, h3, h4, h5 {
+    font-family: $headingFont;
+}
+
+.layout {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: $standardPadding $standardPadding 0 $standardPadding;
+}
+
+@media only screen 
+  and (min-device-width: 1180px) {
+
+    .layout {
+        max-width: 800px;
+    }
+
+  }
+
 @import './styles/logo.scss';
+@import './styles/navigation.scss';
+@import './styles/welcome.scss';
+@import './styles/search.scss';
+@import './styles/searchResults.scss';
