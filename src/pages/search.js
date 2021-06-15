@@ -10,8 +10,6 @@ const SearchPage = () => {
     const searchTerm = useSelector((state) => state.search.searchHistory);
     const lastSearchTerm = searchTerm[searchTerm.length - 1];
 
-    console.log("unique id ", uuidv4());
-
     return (
         <div className="layout search__results">
             <h1>Results for: <span>{lastSearchTerm}</span>.</h1>

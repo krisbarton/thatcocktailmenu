@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeItem } from '../redux/menuSlice';
 
 import CocktailDisplay from '../components/cocktails/display';
+import Search from '../components/search';
 
 const MenuPage = () => {
 
@@ -29,10 +30,16 @@ const MenuPage = () => {
                         }
                     })
                     :
-
-                    <h2>Oops! Your menu is empty!</h2>
+                    <div className="menu__empty">
+                        <h2>Oops! Your menu is empty!</h2>
+                    </div>
 
             }
+            <div className="menu__search">
+                <h2>Find more cocktails for your menu</h2>
+                <Search />
+            </div>
+
         </div>
 
     )

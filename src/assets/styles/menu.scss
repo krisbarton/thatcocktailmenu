@@ -10,4 +10,19 @@
         }
     }
 
+    &__search {
+        margin-top: 2rem;
+        padding-top: 2rem;
+
+        .layout {
+            margin-top: 2rem;
+            padding: 0;
+        }
+    }
+
+    &__empty {
+        border-bottom: 1px solid #2b2b2b;
+        padding-bottom: 4rem;
+    }
+
 }
