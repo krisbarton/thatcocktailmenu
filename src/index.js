@@ -12,14 +12,16 @@ Further features:
 
     - Add Routing: DONE!
     - Add navigation component: DONE!
-    - View Menu: DONE!
+    - View Menu: 
     - Remove items from menu, in menu view: DONE!
     - Menu link item count (i.e. how many cocktails do I have in my menu?): DONE!
-    - Add Redux slice for serach history and results
-    - Move search results to new view.
-    - Continue to build 
+    - Add Redux slice for serach history and results: DONE!
+    - Move search results to new view: DONE!
     - Do styles for app.
     - Do animations.
+    - Do SRC SET component for images.
+    - Work on PDF bundler.
+    - Make PDF links available forever?
 
     V2
     - Clickable to resuseable Search History.
@@ -28,6 +30,7 @@ Further features:
     - Sharing options.
     - Login options.
     - Alcohol deals.
+    - Investigate React optimisation using React.lazy()
 
 */
 

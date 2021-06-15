@@ -10,7 +10,7 @@ export const menuSlice = createSlice({
             state.cocktail.push(action.payload)
         },
         removeItem: (state, action) => {
-            const filtered = state.cocktail.filter((el) => { return el.title !== action.payload });
+            const filtered = state.cocktail.filter((e) => { return e.title !== action.payload });
             state.cocktail = filtered;
         },
         clearMenu: (state) => {

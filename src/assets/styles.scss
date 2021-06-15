@@ -15,9 +15,9 @@ header {
     align-items: flex-start;
     display: flex;
     flex-wrap: wrap;
+    height: $headerMobileHeight;
     justify-content: space-between;
     margin: 0 auto;
-    height: $headerHeight;
     max-width: $maxWidth;
 }
 
@@ -34,6 +34,10 @@ h1, h2, h3, h4, h5 {
 @media only screen 
   and (min-device-width: 1180px) {
 
+    header {
+        height: $headerHeight;
+    }
+
     .layout {
         max-width: 800px;
     }
@@ -45,3 +49,4 @@ h1, h2, h3, h4, h5 {
 @import './styles/welcome.scss';
 @import './styles/search.scss';
 @import './styles/searchResults.scss';
+@import './styles/menu.scss';

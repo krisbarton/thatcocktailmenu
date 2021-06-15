@@ -20,22 +20,49 @@
     }
 
     h3 {
-
+        border-bottom: 1px solid #1a1a1a;
+        display: flex;
+        flex-wrap: wrap;
         font-size: 1.6rem;
+        padding-bottom: 1rem;
 
         a {
-            border-bottom: 1px solid #1a1a1a;
             align-items: center;
             align-content: center;
             display: flex;
             justify-content: space-between;
-            padding-bottom: 1rem;
             width: 100%;
         }
 
         span {
-            color: $primaryColor;
+            align-self: flex-end;
+            color: $secondaryColor;
             font-size: 2rem;
+        }
+
+        button.remove {
+            background-color: $removeRed;
+            &:hover {
+                background-color: darken($removeRed, 5%);
+            }
+        }
+
+        button {
+            border: 0;
+            border-radius: .3rem;;
+            background-color: $tertiaryColor;
+            color: $foregroundColor;
+            cursor: pointer;
+            font-family: $standardFont;
+            font-size: .9rem;
+            margin: 0 0 1rem 0;
+            min-width: 100px;
+            padding: .5rem .8rem;
+
+
+            &:hover {
+                background-color: darken($tertiaryColor, 5%);
+            }
         }
     }
 
@@ -48,6 +75,7 @@
         &--active {
             align-items: flex-start;
             display: flex;
+            flex-wrap: wrap;
             height: auto;
             visibility: visible;
             opacity: 1;
@@ -58,8 +86,10 @@
         }
 
         ul {
+            line-height: 1.8;
             padding: 0;
         }
+
     }
 
     &__list {
@@ -75,10 +105,12 @@
     &__item {
         flex-basis: auto;
         min-width: 250px;
+        padding: 0 1rem;
 
         h4 {
             color: $secondaryColor;
             font-size: 1.2rem;
+            margin-top: .5rem;
         }
 
         a {
@@ -92,3 +124,26 @@
     }
 
 }
+
+@media only screen 
+  and (min-device-width: 1180px) {
+    .search__results {
+        h3 {
+            flex-wrap: nowrap;
+
+            button {
+                font-size: .8rem;
+                margin: 0 2rem 0 0;
+                padding: .2rem .4rem;
+            }
+        }
+
+        &__details {
+
+            &--active {
+                flex-wrap: nowrap;
+            }
+
+        }
+    }
+  }

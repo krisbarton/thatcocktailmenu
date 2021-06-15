@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeItem } from '../redux/menuSlice';
 
@@ -10,19 +11,28 @@ const MenuPage = () => {
     const dispatch = useDispatch();
 
     return (
-        <div className="layout">
-            <h1>Your Menu</h1>
-            {Object.keys(menu).map((key, index) => {
-                if (menu[key].title !== undefined) {
-                    const { title, ingredients, recipe } = menu[key];
-                    return (
-                        <>
-                            <CocktailDisplay name={title} ingredients={ingredients} recipe={recipe} id={key} />
-                            <button aria-label="Remove Cocktail from your menu!" onClick={() => dispatch(removeItem(title))}>Remove Recipe</button>
-                        </>
-                    )
-                }
-            })}
+        <div className="layout search__results">
+            <div className="menu__header">
+                <h1>Your Menu</h1>
+                <p>Below is the list of cocktails you've saved to your menu. Ckick the remove button to remove any cocktails you no longer want in your menu.</p>
+            </div>
+            {
+                menu.length !== 0 ?
+                    Object.keys(menu).map((key, index) => {
+                        if (menu[key].title !== undefined) {
+                            const id = uuidv4();
+                            return (
+                                <>
+                                    <CocktailDisplay data={menu[key]} key={id} id={uuidv4()} />
+                                </>
+                            )
+                        }
+                    })
+                    :
+
+                    <h2>Oops! Your menu is empty!</h2>
+
+            }
         </div>
 
     )

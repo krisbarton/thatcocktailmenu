@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 
 import CocktailDisplay from '../components/cocktails/display';
@@ -9,17 +10,19 @@ const SearchPage = () => {
     const searchTerm = useSelector((state) => state.search.searchHistory);
     const lastSearchTerm = searchTerm[searchTerm.length - 1];
 
+    console.log("unique id ", uuidv4());
+
     return (
         <div className="layout search__results">
             <h1>Results for: <span>{lastSearchTerm}</span>.</h1>
             <h2><span>{searchResults.totalPosts}</span> cocktails found.</h2>
-            <div className="search__results__list">
-                {console.log('return searh results ', searchResults)}
+            <div className="search__results__list" key={uuidv4()}>
                 {Object.keys(searchResults).map((key, index) => {
-                    const { title, ingredients, recipe } = searchResults[key];
+                    const id = uuidv4();
+                    const { title } = searchResults[key];
                     if (title !== undefined) {
                         return (
-                            <CocktailDisplay name={title} ingredients={ingredients} recipe={recipe} key={key} />
+                            <CocktailDisplay data={searchResults[key]} key={id} id={id} />
                         )
                     }
                 })}
