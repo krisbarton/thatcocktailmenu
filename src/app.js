@@ -10,6 +10,7 @@ import Welcome from './components/welcome';
 import Search from './components/search';
 import MenuPage from './pages/menu';
 import SearchPage from './pages/search';
+import PrintPage from './pages/print';
 
 const App = () => {
 
@@ -27,6 +28,9 @@ const App = () => {
                     </Route>
                     <Route path="/search">
                         <SearchPage />
+                    </Route>
+                    <Route path="/print">
+                        <PrintPage />
                     </Route>
                 </Switch>
             </Router>

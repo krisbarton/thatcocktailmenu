@@ -24,7 +24,7 @@
         display: flex;
         flex-wrap: wrap;
         font-size: 1.6rem;
-        padding-bottom: 1rem;
+        padding-bottom: 2rem;
 
         a {
             align-items: center;
@@ -54,10 +54,11 @@
             color: $foregroundColor;
             cursor: pointer;
             font-family: $standardFont;
-            font-size: .9rem;
+            font-size: .8rem;
             margin: 0 0 1rem 0;
             min-width: 100px;
             padding: .5rem .8rem;
+            text-transform: uppercase;
 
 
             &:hover {

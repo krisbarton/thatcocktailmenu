@@ -1,0 +1,29 @@
+.print {
+    align-content: center;
+    align-items: center;
+    background: #000;
+    color: #FFF;
+    display: flex;
+    flex-wrap: wrap;
+    height: 840px;
+    justify-content: center;
+    padding: 0 3rem;
+    width: 595px;
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    &__message {
+        text-align: center;
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.4rem;
+        }
+    }
+
+}

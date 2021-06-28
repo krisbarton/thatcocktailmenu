@@ -9,6 +9,7 @@ body {
     color: $foregroundColor;
     font-family: $standardFont;
     font-size: 1rem;
+    margin: 0;
 }
 
 header {
@@ -19,6 +20,7 @@ header {
     justify-content: space-between;
     margin: 0 auto;
     max-width: $maxWidth;
+    padding-top: 1rem;
 }
 
 h1, h2, h3, h4, h5 {
@@ -29,6 +31,21 @@ h1, h2, h3, h4, h5 {
     margin: 0 auto;
     max-width: 600px;
     padding: $standardPadding $standardPadding 0 $standardPadding;
+}
+
+.button {
+    background-color: $primaryColor;
+    border: 0;
+    border-radius: .3rem;
+    color: $foregroundColor;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: .8rem 1rem;
+    text-decoration: none;
+
+    &:hover {
+        background-color: darken($primaryColor, 10%);
+    }
 }
 
 @media only screen 
@@ -50,3 +67,4 @@ h1, h2, h3, h4, h5 {
 @import './styles/search.scss';
 @import './styles/searchResults.scss';
 @import './styles/menu.scss';
+@import './styles/print';

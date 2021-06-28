@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 
 import CocktailDisplay from '../components/cocktails/display';
+import Search from '../components/search';
 
 const SearchPage = () => {
 
@@ -24,6 +25,10 @@ const SearchPage = () => {
                         )
                     }
                 })}
+            </div>
+            <div className="menu__search">
+                <h2>Find more cocktails for your menu</h2>
+                <Search />
             </div>
         </div>
     )

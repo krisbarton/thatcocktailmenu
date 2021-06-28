@@ -31,18 +31,23 @@
         background-color: $backgroundColor;
         display: flex;
         flex-wrap: wrap;
-        height: calc(100vh - #{$headerHeight});
+        height: 100vh;
         justify-content: center;
         position: fixed;
-        top: $headerHeight;
+        top: 0;
         left: 0;
         width: 100vw;
         z-index: 2;
+
+        header {
+            flex-basis: 100%;
+        }
 
        .loading {
            align-items: center;
            align-content: center;
            display: flex;
+           flex-basis: 100%;
            flex-wrap: wrap;
            padding-bottom: 15%;
            text-align: center;

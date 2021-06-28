@@ -24,6 +24,7 @@ Further features:
     - Make PDF links available forever?
 
     V2
+    - Mobile menu options at the bottom on the page after scroll - just with icons
     - Clickable to resuseable Search History.
     - Random cocktail display.
     - Add ingredients to WordPress api to get list of ingredients needed for entire menu.
